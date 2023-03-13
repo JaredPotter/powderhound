@@ -27,3 +27,5 @@ node_modules/
 
 powderhound-*-firebase-adminsdk-*.json
 .env
+
+firebase-debug.log
