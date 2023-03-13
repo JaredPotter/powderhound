@@ -16,6 +16,8 @@ dayjs.extend(isSameOrBefore);
 dayjs.extend(isSameOrAfter);
 require('dotenv').config();
 
+const isDev = process.argv[2];
+
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const toNumber = process.env.TWILIO_TO_NUMBER;
@@ -79,9 +81,9 @@ async function handleAlta(document) {
     for(const lift of lifts) {
         const documentLift = document.lifts[lift.name];
 
-        if(lift.name === 'Supreme') {
-            lift.open = true; // testing only
-        }
+        // if(lift.name === 'Supreme') {
+        //     lift.open = true; // testing only
+        // }
 
         if(documentLift.is_open !== lift.open) {
             const isOpen = lift.open;
@@ -104,4 +106,10 @@ async function handleAlta(document) {
             await firestore.collection('resorts').doc('alta').set(document);
         }
     }
+}
+
+if(isDev) {
+    (async () => {
+        checkForResortUpdates();
+    })();
 }

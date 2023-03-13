@@ -3,10 +3,7 @@
   "version": "",
   "private": true,
   "devDependencies": {
-    "firebase-functions-test": "^0.2.0",
-    "@vue/cli-plugin-babel": "~4.5.15",
-    "@vue/cli-plugin-eslint": "~4.5.15",
-    "@vue/cli-service": "~4.5.15"
+    "firebase-functions-test": "^0.2.0"
   },
   "description": "Cloud Functions for Firebase",
   "scripts": {
@@ -21,12 +18,12 @@
   },
   "main": "index.js",
   "dependencies": {
-    "firebase-functions": "^3.18.0",
     "axios": "^1.2.6",
     "cheerio": "^1.0.0-rc.12",
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.1",
     "twilio": "^4.8.0"
   },
   "readme": "ERROR: No README data found!",

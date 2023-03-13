@@ -21,3 +21,9 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+node_modules/
+.DS_Store
+
+powderhound-*-firebase-adminsdk-*.json
+.env
