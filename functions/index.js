@@ -87,7 +87,7 @@ async function handleAlta(document) {
             const isOpen = lift.open;
 
             if(isOpen) {
-                const messageText = `${lift.name} is now OPEN! Go get those freshies ❄️`;
+                const messageText = `ALTA - ${lift.name} is now OPEN! Go get those freshies ❄️`;
                 try {
                     client.messages.create({
                         to: toNumber,
