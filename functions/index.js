@@ -62,9 +62,11 @@ async function checkForResortUpdates(){
         const openingTime = dayjs.tz(`${todaysDate} ${document.opening_time}`, "YYYY-MM-DD hh:mma", document.timezone);
         const closingTime = dayjs.tz(`${todaysDate} ${document.closing_time}`, "YYYY-MM-DD hh:mma", document.timezone);
 
-        console.log(`now          ${now.format()}`);
-        console.log(`openingTime  ${openingTime.format()}`);
-        console.log(`closingTime  ${closingTime.format()}`);
+        if(isDev) {
+            console.log(`now          ${now.format()}`);
+            console.log(`openingTime  ${openingTime.format()}`);
+            console.log(`closingTime  ${closingTime.format()}`);
+        }
 
         if(
             now.isSameOrAfter(openingTime) && 
@@ -110,12 +112,12 @@ async function handleAlta(document) {
                 const messageText = `ALTA - ${lift.name} is now OPEN! Go get those freshies ❄️`;
 
                 try {
-                    client.messages.create({
-                        to: toNumber,
-                        from: fromNumber,
-                        body: messageText,
-                    })
-                    .then(message => console.log(message.sid));
+                    // client.messages.create({
+                    //     to: toNumber,
+                    //     from: fromNumber,
+                    //     body: messageText,
+                    // })
+                    // .then(message => console.log(message.sid));
                 } catch (error) {
                     console.log(error);
                     console.log(...Object.keys(error));
